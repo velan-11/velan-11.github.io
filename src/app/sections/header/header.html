@@ -1,0 +1,27 @@
+<header class="site-header" [ngClass]="{ 'is-scrolled': scrolled(), 'is-open': menuOpen() }">
+  <div class="container header-inner">
+    <a href="#top" class="brand" (click)="closeMenu()">
+      <span class="brand-mark">V</span>
+      <span class="brand-name">velan<span class="accent">.</span></span>
+    </a>
+
+    <nav class="nav-links" aria-label="Primary">
+      @for (link of links; track link.href; let i = $index) {
+        <a [href]="link.href" class="nav-link" (click)="closeMenu()">
+          <span class="nav-index">0{{ i + 1 }}.</span>
+          <span>{{ link.label }}</span>
+        </a>
+      }
+      <a class="btn btn-ghost btn-sm" href="mailto:velan30000@gmail.com">resume</a>
+    </nav>
+
+    <button
+      class="menu-toggle"
+      (click)="toggleMenu()"
+      [attr.aria-expanded]="menuOpen()"
+      aria-label="Toggle menu"
+    >
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>

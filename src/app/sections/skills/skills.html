@@ -1,0 +1,19 @@
+<section id="skills" class="section skills">
+  <div class="container">
+    <p class="section-label"><span>02.</span> skills</p>
+    <h2 class="section-title">Tools I build with.</h2>
+
+    <div class="skills-grid">
+      @for (group of groups; track group.title) {
+        <div class="skill-group">
+          <h3 class="group-title">{{ group.title }}</h3>
+          <ul class="chip-list">
+            @for (s of group.items; track s) {
+              <li class="chip">{{ s }}</li>
+            }
+          </ul>
+        </div>
+      }
+    </div>
+  </div>
+</section>
