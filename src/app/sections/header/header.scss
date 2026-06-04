@@ -79,6 +79,17 @@
   font-size: 0.85rem;
 }
 
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+// Social icons live inside the slide-out menu — hidden on desktop.
+.nav-social {
+  display: none;
+}
+
 .menu-toggle {
   display: none;
   position: relative;
@@ -122,6 +133,21 @@
   }
 
   .nav-link { font-size: 1.05rem; }
+
+  // Show the social icons row at the bottom of the open menu.
+  .nav-social {
+    display: flex;
+    gap: 2rem;
+    margin-top: 1rem;
+    padding-top: 1.75rem;
+    border-top: 1px solid var(--border);
+
+    a {
+      color: var(--text-dim);
+      transition: color 0.2s var(--ease);
+    }
+    a:hover { color: var(--accent); }
+  }
 
   .is-open .nav-links {
     transform: translateX(0);
